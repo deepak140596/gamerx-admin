@@ -1,0 +1,117 @@
+{
+  "project_info": {
+    "project_number": "870509691720",
+    "firebase_url": "https://toornament-93813.firebaseio.com",
+    "project_id": "toornament-93813",
+    "storage_bucket": "toornament-93813.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870509691720:android:ce4514b0c7023f9244e97d",
+        "android_client_info": {
+          "package_name": "com.example.gamerxadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870509691720-frn1flpvokdghmf2pjo30rbhbail8lnm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gamerxadmin",
+            "certificate_hash": "166b78a984f4ed1563b8a5a9968e7d55cfcf3098"
+          }
+        },
+        {
+          "client_id": "870509691720-d57e42jf8l3emf20609s669r92nou676.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gamerxadmin",
+            "certificate_hash": "6a519353e3ecb97c0d91b874944f03ac36f54729"
+          }
+        },
+        {
+          "client_id": "870509691720-so3c6te3gndknt1ghmgas0q74op2u5n7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gamerxadmin",
+            "certificate_hash": "9607efef2830485e28f09f08950e75d7ea5334fc"
+          }
+        },
+        {
+          "client_id": "870509691720-nqpj896ho3fb20iqqusje68scokrqhkl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGYKO48KTNeMJE3y7hKuWWqXl96FGwGrw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "870509691720-nqpj896ho3fb20iqqusje68scokrqhkl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870509691720:android:86bd9caeaf74a098",
+        "android_client_info": {
+          "package_name": "com.localli.toornament"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870509691720-q9lj8s1tnt4bb7limc1infjbrdonqjb6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.localli.toornament",
+            "certificate_hash": "166b78a984f4ed1563b8a5a9968e7d55cfcf3098"
+          }
+        },
+        {
+          "client_id": "870509691720-d65nbqfv4la6n5vjpvai67om3pmo657g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.localli.toornament",
+            "certificate_hash": "6a519353e3ecb97c0d91b874944f03ac36f54729"
+          }
+        },
+        {
+          "client_id": "870509691720-p7hpbmp99dudl49bu5tvm1tc6nkdsrts.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.localli.toornament",
+            "certificate_hash": "9607efef2830485e28f09f08950e75d7ea5334fc"
+          }
+        },
+        {
+          "client_id": "870509691720-nqpj896ho3fb20iqqusje68scokrqhkl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGYKO48KTNeMJE3y7hKuWWqXl96FGwGrw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "870509691720-nqpj896ho3fb20iqqusje68scokrqhkl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

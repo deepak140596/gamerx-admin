@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">GamerXAdmin</string>
+
+    <string-array name="team_type">
+        <item>Solo</item>
+        <item>Duo</item>
+        <item>Squad</item>
+    </string-array>
+
+    <string-array name="match_status">
+        <item>upcoming</item>
+        <item>ongoing</item>
+        <item>ended</item>
+        <item>cancelled</item>
+    </string-array>
+
+    <string-array name="game_id">
+        <item>pubgm</item>
+<!--        <item>pubgmlite</item>-->
+<!--        <item>pubgpc</item>-->
+<!--        <item>pubgpclite</item>-->
+<!--        <item>codm</item>-->
+    </string-array>
+
+    <string-array name="perspective_mode">
+        <item>TPP</item>
+        <item>FPP</item>
+    </string-array>
+</resources>
+
+
