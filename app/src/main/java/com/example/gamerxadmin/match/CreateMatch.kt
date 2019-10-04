@@ -2,18 +2,30 @@ package com.example.gamerxadmin.match
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.DatePicker
 import android.widget.TimePicker
 import com.example.gamerxadmin.R
 import com.example.gamerxadmin.database.createNewMatchToDB
+import com.example.gamerxadmin.database.updateMatch
 import com.example.gamerxadmin.models.Match
+import com.example.gamerxadmin.utils.getPositionInArray
 import kotlinx.android.synthetic.main.activity_create_match.*
+import org.jetbrains.anko.startActivity
 import java.util.*
 
 class CreateMatch : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
     TimePickerDialog.OnTimeSetListener{
+
+    companion object{
+        private val KEY_CREATE_MATCH = "create_match"
+        fun start(context: Context, match: Match){
+            context.startActivity<CreateMatch>(KEY_CREATE_MATCH to match)
+        }
+    }
 
     private val calendar = Calendar.getInstance()
 
@@ -21,12 +33,20 @@ class CreateMatch : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_match)
 
+        val match = intent.extras?.getSerializable(KEY_CREATE_MATCH) as? Match
+        match?.let {
+            updateUI(it)
+        }
         setupUI()
     }
 
     private fun setupUI(){
         createMatchBtn.setOnClickListener {
             createMatch()
+        }
+
+        updateMatchBtn.setOnClickListener {
+            createMatch(true)
         }
 
         createMatchStartTimeEt.setOnClickListener {
@@ -38,6 +58,31 @@ class CreateMatch : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
                 currentDay.get(Calendar.DAY_OF_MONTH))
             datePickerDialog.show()
         }
+    }
+
+    private fun updateUI(match: Match){
+        createMatchIdEt.setText(match.matchId)
+        createMatchIdEt.isEnabled = false
+        createMatchStartTimeEt.setText(match.startTime.toString())
+        createMatchMinPlayersEt.setText("${match.minPlayers}")
+        createMatchMaxPlayersEt.setText("${match.maxPlayers}")
+        createMatchWinAmtEt.setText("${match.winAmount}")
+        createMatchEntryFeeEt.setText("${match.entryFee}")
+        createMatchPerKillEt.setText("${match.pricePerKill}")
+        createMatchMapEt.setText(match.map)
+
+        createMatchPerspectiveSpinner.setSelection(getPositionInArray(match.perspectiveMode,
+            resources.getStringArray(R.array.perspective_mode)))
+
+        createMatchStatusSpinner.setSelection(getPositionInArray(match.status,
+            resources.getStringArray(R.array.match_status)))
+        createMatchTeamTypeSpinner.setSelection(getPositionInArray(match.teamType,
+            resources.getStringArray(R.array.team_type)))
+        createMatchGameIdSpinner.setSelection(getPositionInArray(match.gameId,
+            resources.getStringArray(R.array.game_id)))
+
+        createMatchBtn.visibility = View.GONE
+        updateMatchBtn.visibility = View.VISIBLE
     }
 
     override fun onDateSet(p0: DatePicker?, year: Int, month: Int, date: Int) {
@@ -53,7 +98,7 @@ class CreateMatch : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
         createMatchStartTimeEt.setText(calendar.timeInMillis.toString())
     }
 
-    private fun createMatch(){
+    private fun createMatch(update: Boolean = false ){
         val match = Match()
         match.matchId = createMatchIdEt.text.toString()
         match.startTime = createMatchStartTimeEt.text.toString().toLong()
@@ -68,7 +113,12 @@ class CreateMatch : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
         match.pricePerKill = createMatchPerKillEt.text.toString().toDouble()
         match.map = createMatchMapEt.text.toString()
 
-        createNewMatchToDB(match)
+        if(update){
+            updateMatch(match)
+        } else {
+            createNewMatchToDB(match)
+        }
         finish()
     }
+
 }

@@ -1,5 +1,18 @@
 <resources>
+
     <string name="app_name">GamerXAdmin</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="enter_otp_sent_to">Enter OTP sent to</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_my_matches">My Matches</string>
+    <string name="title_referrals">Referrals</string>
+    <string name="selected_match">selected_match</string>
+    <string name="current_balance">current_balance</string>
+    <string name="match_fee">match_fee</string>
+
 
     <string-array name="team_type">
         <item>Solo</item>
@@ -16,16 +29,15 @@
 
     <string-array name="game_id">
         <item>pubgm</item>
-<!--        <item>pubgmlite</item>-->
-<!--        <item>pubgpc</item>-->
-<!--        <item>pubgpclite</item>-->
-<!--        <item>codm</item>-->
+        <!--        <item>pubgmlite</item>-->
+        <!--        <item>pubgpc</item>-->
+        <!--        <item>pubgpclite</item>-->
+        <!--        <item>codm</item>-->
     </string-array>
 
     <string-array name="perspective_mode">
         <item>TPP</item>
         <item>FPP</item>
     </string-array>
+    
 </resources>
-
-

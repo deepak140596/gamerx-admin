@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.gamerxadmin.login.GoogleSignIn
 import com.example.gamerxadmin.match.CreateMatch
+import com.example.gamerxadmin.match.UpcomingMatches
 import com.example.gamerxadmin.utils.firebaseUser
-import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -19,8 +19,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setOnClick(){
-        main_create_match_btn.setOnClickListener {
+        mainCreateMatchBtn.setOnClickListener {
             startActivity(Intent(this,CreateMatch::class.java))
+        }
+
+        mainUpcomingMatchesBtn.setOnClickListener {
+            startActivity(Intent(this,UpcomingMatches::class.java))
         }
     }
 

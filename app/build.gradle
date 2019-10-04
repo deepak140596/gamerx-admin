@@ -85,5 +85,8 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.6.1'
     implementation "com.squareup.retrofit2:converter-gson:2.6.1"
 
+    // Anko
+    implementation "org.jetbrains.anko:anko-commons:0.10.5"
+
 }
 apply plugin: 'com.google.gms.google-services'

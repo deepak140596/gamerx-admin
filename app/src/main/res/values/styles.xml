@@ -1,11 +1,29 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textViewStyle">@style/MonsterratTextView</item>
+        <item name="android:buttonStyle">@style/MonsterratButtonStyle</item>
     </style>
 
+    <style name="AppTheme.Green" parent="PayumoneyAppTheme">
+        <item name="colorPrimary">@color/payumoney_primary</item>
+        <item name="colorPrimaryDark">@color/payumoney_primary_dark</item>
+        <item name="colorAccent">@color/payumoney_primary</item>
+        <item name="colorButtonNormal">@color/payumoney_primary</item>
+        <item name="alertDialogTheme">@style/AlertDialogStyle_Default</item>
+        <item name="actionMenuTextColor">@color/white</item>
+    </style>
+
+    <style name="MonsterratTextView" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/monsterrat_semibold</item>
+    </style>
+
+    <style name="MonsterratButtonStyle" parent="android:Widget.Button">
+        <item name="android:fontFamily">@font/monsterrat_semibold</item>
+    </style>
 </resources>

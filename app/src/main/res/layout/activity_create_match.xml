@@ -41,7 +41,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/dimen_8dp">
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -62,7 +63,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/dimen_8dp">
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -223,7 +225,19 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen_60dp"
             android:layout_margin="@dimen/dimen_8dp"
+            android:backgroundTint="@color/color_dark_blue"
+            android:textColor="@color/white"
             android:text="Create Match"/>
+
+        <Button
+            android:visibility="gone"
+            android:id="@+id/updateMatchBtn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_60dp"
+            android:layout_margin="@dimen/dimen_8dp"
+            android:backgroundTint="@color/color_dark_blue"
+            android:textColor="@color/white"
+            android:text="Update Match"/>
     </LinearLayout>
 
 </ScrollView>
