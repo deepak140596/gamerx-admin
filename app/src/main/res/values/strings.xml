@@ -40,4 +40,11 @@
         <item>FPP</item>
     </string-array>
 
+    <string-array name="transaction_type">
+        <item>Credit</item>
+        <item>Debit</item>
+        <item>Refund</item>
+        <item>None</item>
+    </string-array>
+
 </resources>

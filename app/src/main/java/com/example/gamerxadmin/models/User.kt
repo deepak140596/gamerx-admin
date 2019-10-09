@@ -1,6 +1,5 @@
 package com.example.gamerxadmin.models
 
-import com.example.gamerxadmin.models.Match
 import java.io.Serializable
 
 class User() : Serializable{

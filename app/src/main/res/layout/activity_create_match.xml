@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".match.CreateMatch">
+    tools:context=".ui.match.CreateMatch">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -221,6 +221,16 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
+            android:visibility="gone"
+            android:id="@+id/createRoomCredBtn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_60dp"
+            android:layout_margin="@dimen/dimen_8dp"
+            android:backgroundTint="@color/color_dark_blue"
+            android:textColor="@color/white"
+            android:text="Create Room"/>
+
+        <Button
             android:id="@+id/createMatchBtn"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen_60dp"
@@ -238,6 +248,7 @@
             android:backgroundTint="@color/color_dark_blue"
             android:textColor="@color/white"
             android:text="Update Match"/>
+
     </LinearLayout>
 
 </ScrollView>

@@ -1,5 +1,6 @@
-package com.example.gamerxadmin.match
+package com.example.gamerxadmin.ui.match
 
+import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Context
@@ -10,10 +11,13 @@ import android.widget.DatePicker
 import android.widget.TimePicker
 import com.example.gamerxadmin.R
 import com.example.gamerxadmin.database.createNewMatchToDB
+import com.example.gamerxadmin.database.setRoomIdPw
 import com.example.gamerxadmin.database.updateMatch
 import com.example.gamerxadmin.models.Match
+import com.example.gamerxadmin.models.RoomCredentials
 import com.example.gamerxadmin.utils.getPositionInArray
 import kotlinx.android.synthetic.main.activity_create_match.*
+import kotlinx.android.synthetic.main.dialog_room_credentials.view.*
 import org.jetbrains.anko.startActivity
 import java.util.*
 
@@ -74,6 +78,10 @@ class CreateMatch : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
         createMatchPerspectiveSpinner.setSelection(getPositionInArray(match.perspectiveMode,
             resources.getStringArray(R.array.perspective_mode)))
 
+        createRoomCredBtn.setOnClickListener {
+            showCreateRoomDialog(match)
+        }
+
         createMatchStatusSpinner.setSelection(getPositionInArray(match.status,
             resources.getStringArray(R.array.match_status)))
         createMatchTeamTypeSpinner.setSelection(getPositionInArray(match.teamType,
@@ -83,6 +91,7 @@ class CreateMatch : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
 
         createMatchBtn.visibility = View.GONE
         updateMatchBtn.visibility = View.VISIBLE
+        createRoomCredBtn.visibility = View.VISIBLE
     }
 
     override fun onDateSet(p0: DatePicker?, year: Int, month: Int, date: Int) {
@@ -119,6 +128,22 @@ class CreateMatch : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
             createNewMatchToDB(match)
         }
         finish()
+    }
+
+    private fun showCreateRoomDialog(match: Match){
+        val alertDialog = AlertDialog.Builder(this)
+        val view : View = layoutInflater.inflate(R.layout.dialog_room_credentials,null)
+        alertDialog.setView(view)
+        alertDialog.setTitle("Create Room")
+        alertDialog.setPositiveButton("Create") { _, _ ->
+            val roomId = view.room_credentials_id_tiet.text.toString()
+            val password = view.room_credentials_password_tiet.text.toString()
+            val credentials = RoomCredentials(roomId, password)
+
+            setRoomIdPw(match,credentials)
+        }.setNegativeButton("Cancel"){_,_ ->}
+
+        alertDialog.show()
     }
 
 }

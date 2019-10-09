@@ -1,13 +1,12 @@
-package com.example.gamerxadmin.match
+package com.example.gamerxadmin.ui.match
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gamerxadmin.R
-import com.example.gamerxadmin.match.players.JoinedPlayersActivity
+import com.example.gamerxadmin.ui.match.players.JoinedPlayersActivity
 import com.example.gamerxadmin.models.Match
 import com.example.gamerxadmin.utils.getSpotsLeft
 import kotlinx.android.synthetic.main.card_match.view.*

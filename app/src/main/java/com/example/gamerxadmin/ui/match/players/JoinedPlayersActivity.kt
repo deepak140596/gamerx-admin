@@ -1,4 +1,4 @@
-package com.example.gamerxadmin.match.players
+package com.example.gamerxadmin.ui.match.players
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
@@ -7,18 +7,12 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gamerxadmin.R
-import com.example.gamerxadmin.analytics.D
-import com.example.gamerxadmin.analytics.log
 import com.example.gamerxadmin.database.getJoinedPlayers
 import com.example.gamerxadmin.database.updateMatchStatistics
 import com.example.gamerxadmin.models.Match
 import com.example.gamerxadmin.models.User
-import com.example.gamerxadmin.utils.FirebaseListener
-import com.example.gamerxadmin.utils.toastError
-import com.example.gamerxadmin.utils.toastSuccess
 import kotlinx.android.synthetic.main.activity_joined_players.*
 import org.jetbrains.anko.startActivity
-import java.lang.Exception
 
 class JoinedPlayersActivity : AppCompatActivity() {
 

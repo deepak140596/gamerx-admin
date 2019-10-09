@@ -1,4 +1,4 @@
-package com.example.gamerxadmin.match.players
+package com.example.gamerxadmin.ui.match.players
 
 import android.content.Context
 import android.text.Editable

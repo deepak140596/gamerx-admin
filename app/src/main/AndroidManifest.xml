@@ -12,9 +12,10 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
-        <activity android:name=".match.players.JoinedPlayersActivity"></activity>
-        <activity android:name=".match.UpcomingMatches" />
-        <activity android:name=".match.CreateMatch" />
+        <activity android:name=".ui.useroperation.transactions.UserTransactions"></activity>
+        <activity android:name="com.example.gamerxadmin.ui.match.players.JoinedPlayersActivity" />
+        <activity android:name="com.example.gamerxadmin.ui.match.UpcomingMatches" />
+        <activity android:name="com.example.gamerxadmin.ui.match.CreateMatch" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

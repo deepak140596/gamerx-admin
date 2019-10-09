@@ -1,8 +1,7 @@
-package com.example.gamerxadmin.match
+package com.example.gamerxadmin.ui.match
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gamerxadmin.R
