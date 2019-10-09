@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gamerxadmin.R
 import com.example.gamerxadmin.database.getMatches
 import com.example.gamerxadmin.models.Match
+import com.example.gamerxadmin.models.UPCOMING
 import kotlinx.android.synthetic.main.activity_upcoming_matches.*
 
 class UpcomingMatches : AppCompatActivity() {
@@ -32,7 +33,7 @@ class UpcomingMatches : AppCompatActivity() {
     }
 
     private fun getUpcomingMatches(){
-        getMatches("upcoming").observe(this, Observer {
+        getMatches(UPCOMING).observe(this, Observer {
             matchesList = it
             matchAdapter.matchList = it
             matchAdapter.notifyDataSetChanged()

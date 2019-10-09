@@ -13,9 +13,9 @@ const val FPP = "fpp"
 const val TPP = "tpp"
 
 /** team types **/
-const val SOLO = "solo"
-const val DUO = "duo"
-const val SQUADS = "squads"
+const val SOLO = "Solo"
+const val DUO = "Duo"
+const val SQUAD = "Squad"
 
 /**
  * @param matchId = UID of the match

@@ -12,7 +12,8 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
-        <activity android:name=".match.UpcomingMatches"></activity>
+        <activity android:name=".match.players.JoinedPlayersActivity"></activity>
+        <activity android:name=".match.UpcomingMatches" />
         <activity android:name=".match.CreateMatch" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gamerxadmin.R
+import com.example.gamerxadmin.match.players.JoinedPlayersActivity
 import com.example.gamerxadmin.models.Match
 import com.example.gamerxadmin.utils.getSpotsLeft
 import kotlinx.android.synthetic.main.card_match.view.*
@@ -35,6 +36,11 @@ class MatchAdapter(var context: Context, var matchList: List<Match>, var isVerti
 
         holder.itemView.setOnClickListener {
             CreateMatch.start(context,match)
+        }
+
+        holder.itemView.setOnLongClickListener {
+            JoinedPlayersActivity.start(context,match)
+            return@setOnLongClickListener true
         }
     }
 
