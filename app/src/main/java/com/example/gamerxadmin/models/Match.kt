@@ -45,4 +45,5 @@ class Match (): Serializable {
     var playersJoined : Int = 0
     var playersJoinedList: ArrayList<String> = arrayListOf()
     var roomCredentialsAvailable : Boolean = false
+    var requestCode : Int = 0
 }

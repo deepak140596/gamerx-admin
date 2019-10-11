@@ -220,6 +220,20 @@
                 android:hint="Map"/>
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_8dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/createMatchRequestCodeEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_8dp"
+                android:inputType="numberDecimal"
+                android:hint="Alarm Request Code"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
         <Button
             android:visibility="gone"
             android:id="@+id/createRoomCredBtn"

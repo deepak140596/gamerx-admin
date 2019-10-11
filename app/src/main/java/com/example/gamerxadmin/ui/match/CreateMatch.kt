@@ -74,6 +74,7 @@ class CreateMatch : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
         createMatchEntryFeeEt.setText("${match.entryFee}")
         createMatchPerKillEt.setText("${match.pricePerKill}")
         createMatchMapEt.setText(match.map)
+        createMatchRequestCodeEt.setText(match.requestCode)
 
         createMatchPerspectiveSpinner.setSelection(getPositionInArray(match.perspectiveMode,
             resources.getStringArray(R.array.perspective_mode)))
@@ -121,6 +122,7 @@ class CreateMatch : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
         match.entryFee = createMatchEntryFeeEt.text.toString().toDouble()
         match.pricePerKill = createMatchPerKillEt.text.toString().toDouble()
         match.map = createMatchMapEt.text.toString()
+        match.requestCode = createMatchRequestCodeEt.text.toString().toInt()
 
         if(update){
             updateMatch(match)
