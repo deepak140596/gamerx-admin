@@ -9,17 +9,20 @@ import android.os.Bundle
 import android.view.View
 import android.widget.DatePicker
 import android.widget.TimePicker
+import androidx.lifecycle.Observer
 import com.example.gamerxadmin.R
 import com.example.gamerxadmin.database.createNewMatchToDB
+import com.example.gamerxadmin.database.getJoinedPlayers
 import com.example.gamerxadmin.database.setRoomIdPw
 import com.example.gamerxadmin.database.updateMatch
 import com.example.gamerxadmin.models.Match
 import com.example.gamerxadmin.models.RoomCredentials
+import com.example.gamerxadmin.utils.createRoomAlert
 import com.example.gamerxadmin.utils.getPositionInArray
 import kotlinx.android.synthetic.main.activity_create_match.*
 import kotlinx.android.synthetic.main.dialog_room_credentials.view.*
 import org.jetbrains.anko.startActivity
-import java.util.*
+import java.util.Calendar
 
 class CreateMatch : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
     TimePickerDialog.OnTimeSetListener{
@@ -74,7 +77,8 @@ class CreateMatch : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
         createMatchEntryFeeEt.setText("${match.entryFee}")
         createMatchPerKillEt.setText("${match.pricePerKill}")
         createMatchMapEt.setText(match.map)
-        createMatchRequestCodeEt.setText(match.requestCode)
+        createMatchRequestCodeEt.setText("${match.requestCode}")
+        createMatchRequestCodeEt.isEnabled = false
 
         createMatchPerspectiveSpinner.setSelection(getPositionInArray(match.perspectiveMode,
             resources.getStringArray(R.array.perspective_mode)))
@@ -143,9 +147,18 @@ class CreateMatch : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
             val credentials = RoomCredentials(roomId, password)
 
             setRoomIdPw(match,credentials)
+            sendAlertMessageToPlayers(match,credentials)
         }.setNegativeButton("Cancel"){_,_ ->}
 
         alertDialog.show()
+    }
+
+    private fun sendAlertMessageToPlayers(match: Match, credentials: RoomCredentials) {
+        getJoinedPlayers(match).observe(this, Observer {
+            if(it.isNotEmpty()) {
+                createRoomAlert( credentials, it)
+            }
+        })
     }
 
 }

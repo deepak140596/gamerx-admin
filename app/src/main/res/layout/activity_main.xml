@@ -44,4 +44,17 @@
         android:text="Transactions"/>
 
 
+    <Button
+        android:id="@+id/sendSms"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_60dp"
+        android:layout_marginStart="@dimen/dimen_16dp"
+        android:layout_marginEnd="@dimen/dimen_16dp"
+        android:layout_marginTop="@dimen/dimen_4dp"
+        android:layout_marginBottom="@dimen/dimen_4dp"
+        android:backgroundTint="@color/color_dark_blue"
+        android:textColor="@color/white"
+        android:text="Send SMS"/>
+
+
 </LinearLayout>

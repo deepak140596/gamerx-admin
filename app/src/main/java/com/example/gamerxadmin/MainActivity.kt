@@ -3,10 +3,13 @@ package com.example.gamerxadmin
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.gamerxadmin.analytics.E
+import com.example.gamerxadmin.analytics.log
 import com.example.gamerxadmin.login.GoogleSignIn
 import com.example.gamerxadmin.ui.match.CreateMatch
 import com.example.gamerxadmin.ui.match.UpcomingMatches
 import com.example.gamerxadmin.ui.useroperation.transactions.UserTransactions
+import com.example.gamerxadmin.utils.SMSUtils
 import com.example.gamerxadmin.utils.firebaseUser
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -30,6 +33,10 @@ class MainActivity : AppCompatActivity() {
 
         mainTransactionsBtn.setOnClickListener {
             startActivity(Intent(this,UserTransactions::class.java))
+        }
+
+        sendSms.setOnClickListener {
+            SMSUtils.sendSMS("New Msg","+918100509479")
         }
     }
 
